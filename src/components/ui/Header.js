@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import { makeStyles } from '@material-ui/core/styles';
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -18,15 +19,26 @@ function ElevationScroll(props) {
   });
 }
 
+const useStyles = makeStyles((theme) => ({
+  toolbarMargin: {
+    ...theme.mixins.toolbar,
+  },
+}));
+
 const Header = () => {
+  const classes = useStyles();
+
   return (
-    <ElevationScroll>
-      <AppBar position='fixed' color='primary'>
-        <Toolbar>
-          <Typography variant='h3' >Arc Development</Typography>
-        </Toolbar>
-      </AppBar>
-    </ElevationScroll>
+    <Fragment>
+      <ElevationScroll>
+        <AppBar position='fixed' color='primary'>
+          <Toolbar>
+            <Typography variant='h3'>Arc Development</Typography>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <div className={classes.toolbarMargin} />
+    </Fragment>
   );
 };
 
