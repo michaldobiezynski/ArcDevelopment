@@ -6,6 +6,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import Header from '../components/ui/Header';
 import theme from './ui/Theme';
 import Footer from '../components/ui/Footer';
+import LandingPage from '../components/LandingPage';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -21,11 +22,7 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route
-            exact
-            path='/'
-            component={() => <div style={{ height: '2000px' }}>Home</div>}
-          />
+          <Route exact path='/' component={LandingPage} />
           <Route exact path='/services' component={() => <div>services</div>} />
           <Route
             exact
