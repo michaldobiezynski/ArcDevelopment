@@ -1,6 +1,9 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import ButtonArrow from './ui/ButtonArrow';
 
 import animationData from '../animations/landinganimation/data';
 
@@ -17,7 +20,33 @@ const LandingPage = () => {
     },
   };
   return (
-    <Lottie options={defaultOptions} height={'100%'} width={'100%'}></Lottie>
+    <Grid container direction='column'>
+      <Grid item>
+        <Grid container direction='row'>
+          <Grid item>
+            <div>
+              Bringing West Cost Technology <br />
+              to the Midwest
+            </div>
+            <Grid container>
+              <Button varient='contained'>Free Estimate</Button>
+            </Grid>
+            <Grid item>
+              <Button varient='outlined'>
+                Learn More
+                <ButtonArrow width={15} height={15} fill='red' />
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Lottie
+              options={defaultOptions}
+              height={'100%'}
+              width={'100%'}></Lottie>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
