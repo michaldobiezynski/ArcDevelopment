@@ -107,7 +107,7 @@ const Footer = ({ setValue, setSelectedIndex }) => {
                 }}
                 component={Link}
                 to='/mobileapps'>
-                Mobile App Development
+                iOS/Android App Development
               </Grid>
               <Grid
                 item
